@@ -203,7 +203,7 @@ class StripeSdkModule(private val reactContext: ReactApplicationContext) : React
 
   @ReactMethod
   fun initialise(params: ReadableMap, promise: Promise) {
-    val publishableKey = getValOr(params, "publishableKey", null) as String
+    val publishableKey = getValOr(params, "publishableKey", null) as? String
     val appInfo = getMapOrNull(params, "appInfo") as ReadableMap
     this.stripeAccountId = getValOr(params, "stripeAccountId", null)
     val urlScheme = getValOr(params, "urlScheme", null)
